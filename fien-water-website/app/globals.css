@@ -1,0 +1,616 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Services Section Variables */
+  --services-cyan: 185 95% 45%;
+  --services-dark: 222 84% 5%;
+  --services-gray-400: 217 19% 64%;
+  --services-blue: 210 40% 98%;
+
+  /* Gradient Variables */
+  --gradient-services: linear-gradient(
+    135deg,
+    hsl(var(--services-cyan)),
+    hsl(185 100% 60%)
+  );
+  --gradient-subtle: linear-gradient(
+    135deg,
+    hsl(var(--services-cyan) / 0.05),
+    hsl(var(--services-cyan) / 0.1)
+  );
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
+  --font-nunito-sans: var(--font-nunito-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Typewriter Animation Keyframes */
+@keyframes typewriter-line1 {
+  0% {
+    width: 0;
+    border-right: 2px solid white;
+  }
+  90% {
+    width: 100%;
+    border-right: 2px solid white;
+  }
+  100% {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+@keyframes typewriter-line2 {
+  0%,
+  33% {
+    width: 0;
+    border-right: none;
+  }
+  35% {
+    width: 0;
+    border-right: 2px solid white;
+  }
+  85% {
+    width: 100%;
+    border-right: 2px solid white;
+  }
+  100% {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+@keyframes typewriter-line3 {
+  0%,
+  66% {
+    width: 0;
+    border-right: none;
+  }
+  68% {
+    width: 0;
+    border-right: 2px solid white;
+  }
+  95% {
+    width: 100%;
+    border-right: 2px solid white;
+  }
+  100% {
+    width: 100%;
+    border-right: none;
+  }
+}
+
+/* Animation Classes */
+.animate-typewriter-line1 {
+  animation: typewriter-line1 3.5s steps(32, end) forwards;
+}
+
+.animate-typewriter-line2 {
+  animation: typewriter-line2 3.5s steps(26, end) forwards;
+}
+
+.animate-typewriter-line3 {
+  animation: typewriter-line3 3.5s steps(10, end) forwards;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Regular scrolling container styles without scroll-snap */
+.scroll-snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+.scroll-snap-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Webkit scrollbar styling for smoother appearance */
+.scroll-snap-container::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.scroll-snap-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Text animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Page flip animation keyframes */
+@keyframes flipUp {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-90deg) scale(0.8);
+    transform-origin: left center;
+  }
+  25% {
+    opacity: 0.3;
+    transform: perspective(1200px) rotateY(-60deg) scale(0.85);
+    transform-origin: left center;
+  }
+  50% {
+    opacity: 0.6;
+    transform: perspective(1200px) rotateY(-30deg) scale(0.9);
+    transform-origin: left center;
+  }
+  75% {
+    opacity: 0.8;
+    transform: perspective(1200px) rotateY(-10deg) scale(0.95);
+    transform-origin: left center;
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0deg) scale(1);
+    transform-origin: left center;
+  }
+}
+
+.animate-flipUp {
+  animation: flipUp 0.8s ease-in-out forwards;
+}
+
+/* Floating animations for statistics cards */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s ease-in-out infinite;
+}
+
+/* Hexagon effect for category badges */
+.hexagon-bg {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #1f2937, #4b5563);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hexagon-bg:hover {
+  background: linear-gradient(135deg, #374151, #6b7280);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hexagon-bg::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hexagon-bg:hover::before {
+  opacity: 1;
+}
+
+/* Corner gradient effect for category badges */
+.corner-gradient-bg {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    #1f2937 0%,
+    #374151 25%,
+    #4b5563 50%,
+    #6b7280 75%,
+    #9ca3af 100%
+  );
+  border-radius: 20px;
+  padding: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.corner-gradient-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.1) 25%,
+    rgba(14, 165, 233, 0.2) 50%,
+    rgba(59, 130, 246, 0.3) 75%,
+    rgba(99, 102, 241, 0.4) 100%
+  );
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.corner-gradient-bg::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  background: linear-gradient(135deg, #1f2937, #374151);
+  border-radius: 19px;
+  z-index: 2;
+}
+
+.corner-gradient-bg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.corner-gradient-bg:hover::before {
+  opacity: 1;
+}
+
+.corner-gradient-bg span {
+  position: relative;
+  z-index: 10;
+}
+
+/* Carousel animation effects */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.carousel-content {
+  animation: fadeInScale 0.5s ease-in-out;
+}
+
+.carousel-content .w-\[45\%\] {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.carousel-content .w-\[55\%\] {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* Auto-scroll progress indicator */
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Enhanced transition animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+}
+
+@keyframes zoomBlur {
+  from {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  to {
+    transform: scale(1.1);
+    filter: blur(2px);
+  }
+}
+
+/* Staggered animation delays for content elements */
+.carousel-content .corner-gradient-bg {
+  animation-delay: 0.1s;
+}
+
+.carousel-content h3 {
+  animation-delay: 0.2s;
+}
+
+.carousel-content p {
+  animation-delay: 0.3s;
+}
+
+.carousel-content button {
+  animation-delay: 0.4s;
+}
+
+/* Typewriter keyframes */
+@keyframes typewriter-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Lines appear sequentially */
+.animate-typewriter-line1 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: typewriter-line 1.2s steps(30, end) forwards;
+}
+.animate-typewriter-line2 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: typewriter-line 1s steps(25, end) forwards 1.3s; /* starts after line1 */
+}
+.animate-typewriter-line3 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: typewriter-line 1s steps(20, end) forwards 2.4s; /* starts after line2 */
+}
+
+/* Button fade up */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Services Section Styles */
+.services-tab {
+  position: relative;
+  width: 100%;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.services-tab:hover {
+  background: hsl(var(--services-cyan) / 0.05);
+  transform: translateX(4px);
+}
+
+.services-tab.active {
+  background: hsl(var(--services-) / 0.1);
+  color: hsl(var(--services-cyan));
+  transform: translateX(8px);
+}
+
+.services-tab-text {
+  position: relative;
+  z-index: 20;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: gray;
+}
+
+.services-tab.active .services-tab-text {
+  color: hsl(var(--services-cyan));
+}
+
+.services-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: hsl(var(--services-cyan));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.services-button:hover {
+  background: hsl(var(--services-cyan) / 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px hsl(var(--services-cyan) / 0.3);
+}
+
+.services-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid hsl(var(--services-gray-400) / 0.2);
+}
+
+.services-3d-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Services Animation Classes */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes imageSlideOver {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes textSlideOver {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-imageSlideOver {
+  animation: imageSlideOver 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-textSlideOver {
+  animation: textSlideOver 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
