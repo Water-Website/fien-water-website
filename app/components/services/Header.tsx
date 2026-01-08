@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  const pathname = usePathname();
   return (
     <header className="absolute top-0 left-0 right-0 z-50 px-6 py-6">
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
@@ -22,16 +26,36 @@ const Header = () => {
 
         {/* Navigation Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-white hover:text-blue-200 transition-colors duration-200">
+          <Link 
+            href="/" 
+            className={`text-white hover:border-b hover:border-white hover:font-extrabold transition-all duration-200 ${
+              pathname === '/' ? 'font-extrabold' : ''
+            }`}
+          >
             Home
           </Link>
-          <Link href="/services" className="text-white hover:text-blue-200 transition-colors duration-200">
+          <Link 
+            href="/services" 
+            className={`text-white hover:border-b hover:border-white hover:font-extrabold transition-all duration-200 ${
+              pathname === '/services' ? 'font-extrabold' : ''
+            }`}
+          >
             Services
           </Link>
-          <Link href="/fien-water" className="text-white hover:text-blue-200 transition-colors duration-200">
+          <Link 
+            href="/fien-water" 
+            className={`text-white hover:border-b hover:border-white hover:font-extrabold transition-all duration-200 ${
+              pathname === '/fien-water' ? 'font-extrabold' : ''
+            }`}
+          >
             FIEN Water
           </Link>
-          <Link href="/contact" className="text-white hover:text-blue-200 transition-colors duration-200">
+          <Link 
+            href="/contact-us" 
+            className={`text-white hover:border-b hover:border-white hover:font-extrabold transition-all duration-200 ${
+              pathname === '/contact-us' ? 'font-extrabold' : ''
+            }`}
+          >
             Contact Us
           </Link>
         </div>

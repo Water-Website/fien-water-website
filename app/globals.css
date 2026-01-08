@@ -614,3 +614,276 @@ html {
 .animate-textSlideOver {
   animation: textSlideOver 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.glass-bubble {
+  position: relative;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  cursor: pointer;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.glass-bubble:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 18px;
+  width: fit-content;
+  /* width: 25px; */
+  height: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 30%,
+    rgba(255, 255, 255, 0.2) 60%,
+    /* transparent 100% */
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* .glass-bubble:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  width: 8px;
+  height: 6px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 80%
+  );
+  border-radius: 50%;
+} */
+
+.glass-bubble:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border: 1px solid transparent;
+  border-top-left: 0px solid rgba(255, 255, 255, 0.4);
+  border-bottom-right: 0px solid rgba(255, 255, 255, 0.4);
+  border-top-left-radius: 25px;
+  /* border-top-right-radius: 25px; */
+  /* border-bottom-left-radius: 25px; */
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+.glass-bubble.selected {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+  text-shadow: none;
+}
+
+/* Checkbox specific styling for rounded appearance */
+input[type="checkbox"].glass-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"].glass-bubble:checked {
+  background: radial-gradient(
+    circle at 35% 20%,
+    rgba(6, 182, 212, 0.8) 0%,
+    rgba(6, 182, 212, 0.6) 50%,
+    rgba(6, 182, 212, 0.4) 80%,
+    rgba(6, 182, 212, 0.3) 100%
+  );
+}
+
+input[type="checkbox"].glass-bubble:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Slick Carousel Vertical Slider Styles */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: none;
+}
+
+/* Hide slick arrows and dots */
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+/* Hide scrollbar for continuous scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Vertical Scrolling Animations */
+@keyframes scroll-fast {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-medium {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-slow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.animate-scroll-fast {
+  animation: scroll-fast 20s linear infinite;
+}
+
+.animate-scroll-medium {
+  animation: scroll-medium 25s linear infinite;
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 30s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 30s linear infinite;
+}

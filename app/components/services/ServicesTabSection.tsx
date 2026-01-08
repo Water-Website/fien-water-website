@@ -13,7 +13,7 @@ export default function ServicesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/services-tab/header-bg.png" // replace with your actual background image
+            src="/services-tab/hero-section/header-bg.png" // replace with your actual background image
             alt="Hero Background"
             fill
             priority

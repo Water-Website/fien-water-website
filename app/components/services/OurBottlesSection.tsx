@@ -3,11 +3,14 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { IconArrowRight, IconArrowsUpRight, IconArrowUpRight } from '@tabler/icons-react';
 
 export default function OurBottlesSection() {
 
   const [frontHovered, setFrontHovered] = useState(false);
   const [backHovered, setBackHovered] = useState(false);
+
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   return (
     <section className="relative min-h-screen bg-white py-20 overflow-hidden">
@@ -34,8 +37,8 @@ export default function OurBottlesSection() {
             </div>
             {/* BACK card (smaller, left / behind) */}
             <motion.div
-              initial={{ y: 20, scale: 0.98 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: 20, scale: 0.98, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               whileHover={{ 
                 scale: 1.05,
                 z: 50,
@@ -46,7 +49,7 @@ export default function OurBottlesSection() {
                   duration: 0.4 
                 }
               }}
-              transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+              transition={{ type: 'spring', stiffness: 220, damping: 18, delay: 0 }}
               viewport={{ once: true }}
               className="absolute left-[-20px] top-[-120px] z-10 group cursor-pointer"
               style={{ willChange: 'transform' }}
@@ -84,8 +87,8 @@ export default function OurBottlesSection() {
 
             {/* FRONT card (larger, right / top) */}
             <motion.div
-              initial={{ y: -10, scale: 0.98 }}
-              whileInView={{ y: 0, scale: 1 }}
+              initial={{ y: -10, scale: 0.98, opacity: 0 }}
+              whileInView={{ y: 0, scale: 1, opacity: 1 }}
               whileHover={{ 
                 scale: 1.08,
                 z: 100,
@@ -97,7 +100,7 @@ export default function OurBottlesSection() {
                   duration: 0.4 
                 }
               }}
-              transition={{ type: 'spring', stiffness: 200, damping: 16, delay: 0.2 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 16, delay: 0.4 }}
               viewport={{ once: true }}
               className="absolute right-[50px] top-[120px] z-20 group cursor-pointer"
               style={{ willChange: 'transform' }}
@@ -156,7 +159,7 @@ export default function OurBottlesSection() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-extrabold text-gray-900 font-poppins"
             >
@@ -166,7 +169,7 @@ export default function OurBottlesSection() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
               viewport={{ once: true }}
               className="space-y-6"
             >
@@ -202,7 +205,7 @@ export default function OurBottlesSection() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.85 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
               viewport={{ once: true }}
               className="space-y-4"
             >
@@ -228,7 +231,7 @@ export default function OurBottlesSection() {
                     key={idx}
                     initial={{ opacity: 0, x: -18 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.45, delay: 1 + idx * 0.08 }}
+                    transition={{ duration: 0.45, delay: 2.0 + idx * 0.08 }}
                     viewport={{ once: true }}
                     className="flex items-start text-gray-700 font-nunito-sans"
                   >
@@ -248,7 +251,7 @@ export default function OurBottlesSection() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.7 }}
+              transition={{ duration: 0.8, delay: 2.5 }}
               viewport={{ once: true }}
               className="text-gray-700 text-lg leading-relaxed font-nunito-sans"
               style={{
@@ -264,15 +267,29 @@ export default function OurBottlesSection() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.95 }}
+              transition={{ duration: 0.8, delay: 2.8 }}
               viewport={{ once: true }}
               className="flex items-center space-x-4"
             >
-              <button className="inline-flex items-center px-4 py-2 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans">
+              <button className="inline-flex items-center px-4 py-2 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"  onMouseEnter={() => setIsButtonHovered(true)}
+            onMouseLeave={() => setIsButtonHovered(false)}>
                 <span>Get in touch with us</span>
-                <svg className="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <div className="relative w-5 h-5 ml-2">
+              <IconArrowRight
+                className={`w-5 h-5 absolute transition-all duration-200 ${
+                  isButtonHovered
+                    ? 'opacity-0 transform translate-x-1 -translate-y-1'
+                    : 'opacity-100 transform translate-x-0 translate-y-0'
+                }`}
+              />
+              <IconArrowUpRight
+                className={`w-5 h-5 absolute transition-all duration-200 ${
+                  isButtonHovered
+                    ? 'opacity-100 transform translate-x-0 translate-y-0'
+                    : 'opacity-0 transform -translate-x-1 translate-y-1'
+                }`}
+              />
+            </div>
               </button>
 
               <div className="flex-shrink-0">

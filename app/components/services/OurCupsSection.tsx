@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { IconArrowRight, IconArrowUpRight } from '@tabler/icons-react';
 
 export default function OurCupsSection() {
   const [hovered, setHovered] = useState(false);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   return (
     <section className="relative min-h-screen bg-[#E5E5E5] py-12 overflow-hidden">
@@ -157,11 +159,26 @@ export default function OurCupsSection() {
               viewport={{ once: true }}
               className="flex items-center justify-center"
             >
-              <button className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans">
+              <button className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"
+              onMouseEnter={() => setIsButtonHovered(true)}
+              onMouseLeave={() => setIsButtonHovered(false)}>
                 <span>Get in touch with us</span>
-                <svg className="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <div className="relative w-5 h-5 ml-2">
+              <IconArrowRight
+                className={`w-5 h-5 absolute transition-all duration-200 ${
+                  isButtonHovered
+                    ? 'opacity-0 transform translate-x-1 -translate-y-1'
+                    : 'opacity-100 transform translate-x-0 translate-y-0'
+                }`}
+              />
+              <IconArrowUpRight
+                className={`w-5 h-5 absolute transition-all duration-200 ${
+                  isButtonHovered
+                    ? 'opacity-100 transform translate-x-0 translate-y-0'
+                    : 'opacity-0 transform -translate-x-1 translate-y-1'
+                }`}
+              />
+            </div>
               </button>
             </motion.div>
           </div>
