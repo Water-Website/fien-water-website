@@ -73,7 +73,7 @@ export default function OurBottlesSection() {
                     className="w-full h-full"
                   >
                     <Image
-                      src={backHovered ? "/services-tab/our-bottles/our-bottles-one-hover.png" : "/services-tab/our-bottles/our-bottles-first.png"}
+                      src={backHovered ? "/services-tab/our-bottles/our-bottles-1-hover.png" : "/services-tab/our-bottles/our-bottles-one.png"}
                       alt="Bottle on teal"
                       width={400}
                       height={500}
@@ -126,7 +126,7 @@ export default function OurBottlesSection() {
                     className="w-full h-full"
                   >
                     <Image
-                      src={frontHovered ? "/services-tab/our-bottles/our-bottles-two-hover.png" : "/services-tab/our-bottles/our-bottles-second.png"}
+                      src={frontHovered ? "/services-tab/our-bottles/bottles-22.png" : "/services-tab/our-bottles/our-bottles-two.png"}
                       alt="Person drinking from bottle"
                       width={400}
                       height={400}
@@ -163,7 +163,9 @@ export default function OurBottlesSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-extrabold text-gray-900 font-poppins"
             >
-              Our Bottles
+              Designed to Hold More Than Water
+              <br />
+              <span className="text-sm text-muted">Transforming Everyday Sips into Lasting Brand Stories</span>
             </motion.h2>
 
             <motion.div
@@ -181,14 +183,10 @@ export default function OurBottlesSection() {
                 letterSpacing: '0px'
               }}
               >
-                At FIEN, we believe that everyday items have the power to create extraordinary brand
-                connections. Our custom-branded water bottles are more than just containers — they are a
-                reflection of your brand's identity, carried into people's daily routines. Whether at
-                the gym, in the office, or on the go, our bottles keep your brand visible, memorable,
-                and trusted.
+                We believe true brand connections aren’t built through screens; they’re built through touch, use, and daily experiences. That’s why we transform something as ordinary as a water bottle into a canvas for your brand’s story.
               </p>
 
-              <p className="text-gray-700 text-lg leading-relaxed font-nunito-sans"
+              {/* <p className="text-gray-700 text-lg leading-relaxed font-nunito-sans"
               style={{
                 fontSize: '16px',
                 fontWeight: 500,
@@ -199,7 +197,7 @@ export default function OurBottlesSection() {
                 Crafted with high-quality materials and designed for durability, our bottles
                 seamlessly blend function with style. Every sip becomes a subtle brand reminder,
                 ensuring your message travels wherever your audience goes.
-              </p>
+              </p> */}
             </motion.div>
 
             <motion.div
@@ -220,12 +218,11 @@ export default function OurBottlesSection() {
 
               <ul className="">
                 {[
-                  'Practical Branding – Turn a daily-use item into a constant reminder of your brand.',
-                  'High-Quality Materials – Durable, reusable, and eco-friendly options available.',
-                  'Custom Designs – Tailored to match your brand identity, from colors to logos.',
-                  'Wider Reach – Perfect for offices, cafes, gyms, events, or giveaways.',
-                  'Eco-Conscious Appeal – Encourage sustainability while promoting your brand.',
-                  'Everyday Visibility – Your brand travels with your audience wherever they go.',
+                  'Brand in Hand: We turn your marketing from something people see into something they hold.',
+                  'Visibility that Moves: Whether it’s in a meeting, on a commute, or during a workout, your logo and message travel where your audience does, staying visible, relevant, and authentic.',
+                  'Design with Purpose: Each bottle is crafted for both style and endurance, merging premium design with everyday function, so your brand never fades with time.',
+                  'Beyond Traditional Marketing: We don’t just place your brand in minds; we place it in motion, creating living moments that people interact with every day.',
+                  'Strategic Distribution: From corporate offices to fitness centers and events, our targeted placements ensure your brand reaches the right hands, literally'
                 ].map((item, idx) => (
                   <motion.li
                     key={idx}
@@ -271,7 +268,7 @@ export default function OurBottlesSection() {
               viewport={{ once: true }}
               className="flex items-center space-x-4"
             >
-              <button className="inline-flex items-center px-4 py-2 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"  onMouseEnter={() => setIsButtonHovered(true)}
+              <a href='/contact-us' className="inline-flex items-center px-4 py-2 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"  onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}>
                 <span>Get in touch with us</span>
                 <div className="relative w-5 h-5 ml-2">
@@ -290,7 +287,7 @@ export default function OurBottlesSection() {
                 }`}
               />
             </div>
-              </button>
+              </a>
 
               <div className="flex-shrink-0">
                 <Image src="/services-tab/our-bottles/our-bottles-arrow.png" alt="Our Bottles" width={60} height={40} />

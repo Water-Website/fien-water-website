@@ -3,16 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { IconArrowRight, IconArrowUpRight } from '@tabler/icons-react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const MissionSection = () => {
   const missionPoints = [
-    "Innovative & Future-Ready Solutions",
-    "Human-Centric Design Philosophy", 
-    "Seamless Integration of Aesthetics & Usability",
-    "Focus on Scalability & Growth",
-    "Commitment to Continuous Innovation",
-    "Designs that Inspire & Perform"
+    "Ideas that spark results.",
+    "Designs that leave an imprint.", 
+    "Innovation that scales into the future.",
+    "Narratives built with substance, shaped by story",
+    "Marketing that makes an impact, not just an appearance"
   ];
 
   // Variants
@@ -53,7 +53,7 @@ const MissionSection = () => {
               style={{ animation: "float 3s ease-in-out infinite" }}
             >
               <Image
-                src="/mission/open-rate.png"
+                src="/home-tab/mission/open-rate.png"
                 alt="Open Rate 96%"
                 width={200}
                 height={140}
@@ -71,7 +71,7 @@ const MissionSection = () => {
               style={{ animation: "floatReverse 4s ease-in-out infinite" }}
             >
               <Image
-                src="/mission/click-rate.png"
+                src="/home-tab/mission/click-rate.png"
                 alt="Click Rate 89%"
                 width={200}
                 height={140}
@@ -89,10 +89,10 @@ const MissionSection = () => {
               className="relative"
             >
               <Image
-                src="/mission/mission.png"
+                src="/home-tab/mission/home-mission.png"
                 alt="Mission Background"
                 width={600}
-                height={500}
+                height={450}
                 className="w-full"
               />
             </motion.div>
@@ -123,9 +123,9 @@ const MissionSection = () => {
                 className="text-gray-900 mb-8 font-nunito-sans"
                 style={{ fontSize: '46px', fontWeight: 900, lineHeight: '130%' }}
               >
-                Driven by Purpose,
+                Your Goals,
                 <br />
-                Designed for Impact
+                Our Mission
               </h2>
             </motion.div>
 
@@ -138,14 +138,10 @@ const MissionSection = () => {
               className="space-y-6 mb-8"
             >
               <p className="text-gray-600 font-nunito-sans">
-                Our vision is to blend creativity, strategy, and innovation to craft solutions
-                that inspire, engage, and deliver meaningful experiences for every brand we
-                work with.
+              Our mission is to bring your story to life by transforming ideas into meaningful impact and building brands that stand the test of time. We believe in the philosophy of “what you see is what you get,” ensuring complete transparency, authenticity, and consistency in everything we create.
               </p>
-              <p className="text-gray-500 font-nunito-sans">
-                Our vision is to shape digital experiences that inspire, connect, and leave a
-                lasting impact. We aim to push creative boundaries, blending aesthetics with
-                functionality to craft designs that not only look good but drive real results.
+              <p className="text-gray-600 font-nunito-sans">
+              Through thoughtful design and strategic execution, we craft experiences that go beyond aesthetics—delivering real, measurable results. Every concept we develop is driven by purpose, precision, and clarity, allowing brands to connect deeply with their audience and leave a lasting mark that evolves into a true legacy.
               </p>
             </motion.div>
 
@@ -187,20 +183,22 @@ const MissionSection = () => {
             </motion.div>
 
             {/* Button */}
-            <motion.button
-              custom={6}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="group inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 hover:scale-105"
-            >
-              Know More
-              <span className="relative w-5 h-5 ml-2">
-                <IconArrowRight className="absolute w-5 h-5 opacity-100 group-hover:opacity-0 transition-all duration-200 translate-y-0" />
-                <IconArrowUpRight className="absolute w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-1" />
-              </span>
-            </motion.button>
+            <a href="/fien-water">
+              <motion.div
+                custom={6}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="group inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                Know More
+                <span className="relative w-5 h-5 ml-2">
+                  <IconArrowRight className="absolute w-5 h-5 opacity-100 group-hover:opacity-0 transition-all duration-200 translate-y-0" />
+                  <IconArrowUpRight className="absolute w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-1" />
+                </span>
+              </motion.div>
+            </a>
           </div>
         </div>
       </div>

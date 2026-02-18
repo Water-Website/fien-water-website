@@ -39,9 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${nunitoSans.variable} antialiased`}
       >
-        <div className="scroll-snap-container">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

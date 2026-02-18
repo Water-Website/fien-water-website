@@ -9,42 +9,42 @@ export default function NaturePuritySection() {
 
   const leftItems = [
     {
-      title: 'Alkaline',
-      symbol: 'pH',
-      description: 'Naturally balances body acidity and promotes better hydration',
+      title: 'Alkalinity',
+      symbol: 'CaCo3',
+      description: 'Helps neutralise acidity in water, supporting stable pH levels and consistent hydration quality.',
       delay: 0.8
     },
     {
       title: 'Calcium',
       symbol: 'Ca',
-      description: 'Strengthens bones and supports active body movement.',
+      description: 'Supports normal bone structure and muscle function, contributing to everyday physical activity and strength.',
       delay: 1.2
     },
     {
       title: 'Magnesium',
       symbol: 'Mg',
-      description: 'Enhances energy levels and supports a calm, focused mind',
+      description: 'Plays a role in muscle relaxation and energy metabolism, helping support a balanced and focused body.',
       delay: 1.6
     }
   ];
 
   const rightItems = [
     {
-      title: 'Low Sodium',
+      title: 'Sodium',
       symbol: 'Na',
-      description: 'Helps maintain healthy blood pressure and fluid balance.',
+      description: 'Present in low quantities to help maintain fluid balance without adding excess salt to daily intake.',
       delay: 1.0
     },
     {
-      title: 'Fluoride',
-      symbol: 'FL',
-      description: 'Curated mix of botanical extracts that detoxify and rejuvenate from within.',
+      title: 'TOTAL DISSOLVED SALTS',
+      symbol: 'TDS',
+      description: 'Indicates the purity of water. FIEN’s low TDS ensures a light, clean taste suitable for regular consumption.',
       delay: 1.4
     },
     {
-      title: 'Silica',
-      symbol: 'Si',
-      description: 'Helps maintain healthy blood pressure and fluid balance',
+      title: 'Potential of Hydrogen',
+      symbol: 'pH',
+      description: 'Maintains a balanced pH level, offering smooth hydration that is gentle on the body.',
       delay: 1.8
     }
   ];
@@ -58,9 +58,9 @@ export default function NaturePuritySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl lg:text-5xl font-bold text-center mb-6 font-poppins"
+          className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6 font-poppins"
         >
-          Nature's Purity, Infused with Wellness
+          Reimagining water with wellness.
         </motion.h1>
 
         {/* Subtitle Description */}
@@ -71,13 +71,14 @@ export default function NaturePuritySection() {
           viewport={{ once: true }}
           className="text-center text-gray-700 text-base lg:text-lg max-w-4xl mx-auto mb-16 font-nunito-sans"
         >
-          Every drop of FIEN Water is drawn from deep, pristine aquifers — enriched with essential minerals and herbal infusions that restore balance, vitality, and inner harmony.
+          The Ingredients Behind the Impact.What goes into everything we create at Fien
+
         </motion.p>
 
         {/* Main Content Grid */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-2 mb-12 max-w-6xl mx-auto">
           {/* Left Side - Minerals */}
-          <div className="flex flex-col space-y-8 items-end pr-4">
+          <div className="flex flex-col space-y-10 items-end pr-4">
             {leftItems.map((item, index) => (
               <motion.div
                 key={item.symbol}
@@ -95,7 +96,7 @@ export default function NaturePuritySection() {
                 
                 {/* Circle with Symbol */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#C8E65E] border-4 border-[#05472A] flex items-center justify-center">
-                  <span className="text-[#05472A] font-bold text-xl font-poppins">{item.symbol}</span>
+                  <span className="text-[#05472A] font-bold text-md font-poppins">{item.symbol}</span>
                 </div>
               </motion.div>
             ))}
@@ -114,7 +115,7 @@ export default function NaturePuritySection() {
             <div className="relative w-[310px] h-[400px] rounded-3xl overflow-hidden shadow-xl bg-gray-50">
               {/* Before Hover Image */}
               <Image
-                src="/fien-water-images/wellness/wellness-before-hover.png"
+                src="/fien-water-images/purity/purity-center.png"
                 alt="FIEN Water Wellness"
                 fill
                 className={`object-cover transition-opacity duration-500 ${
@@ -125,7 +126,7 @@ export default function NaturePuritySection() {
               
               {/* After Hover Image */}
               <Image
-                src="/fien-water-images/wellness/wellness-after-hover.png"
+                src="/fien-water-images/purity/purity-center-hover.png"
                 alt="FIEN Water Wellness Hover"
                 fill
                 className={`object-cover transition-opacity duration-500 ${
@@ -149,7 +150,7 @@ export default function NaturePuritySection() {
               >
                 {/* Circle with Symbol */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#C8E65E] border-4 border-[#05472A] flex items-center justify-center">
-                  <span className="text-[#05472A] font-bold text-xl font-poppins">{item.symbol}</span>
+                  <span className="text-[#05472A] font-bold text-md font-poppins">{item.symbol}</span>
                 </div>
                 
                 {/* Text Content */}
@@ -170,7 +171,7 @@ export default function NaturePuritySection() {
           viewport={{ once: true }}
           className="text-center text-gray-700 text-sm lg:text-base max-w-6xl mx-auto mb-8 leading-relaxed font-nunito-sans"
         >
-          Sourced from the depths of protected underground aquifers, FIEN Water is naturally infused with vital minerals and herbal essences that nurture the body and mind. Each drop travels through layers of earth, absorbing nature's finest elements — from skin-revitalizing silica to bone-strengthening calcium and antioxidant-rich alkaline pH. Enriched with our signature blend of herbal infusions, FIEN goes beyond hydration — it restores balance, enhances vitality, and connects you back to nature's purest form of wellness.
+          FIEN Water is naturally balanced with essential minerals that support everyday hydration and overall well-being. With a stable pH level, it helps maintain the body’s natural balance, while calcium and magnesium contribute to normal muscle function, bone health, and sustained energy through the day. Trace elements such as sodium support fluid balance and overall vitality. Sourced responsibly and refined through careful filtration, FIEN Water delivers clean, consistent hydration designed for modern, active lifestyles — simple, functional, and refreshingly pure.
         </motion.p>
 
         {/* Get in Touch Button */}
@@ -181,7 +182,7 @@ export default function NaturePuritySection() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <button className="group inline-flex items-center px-8 py-4 border-2 border-black text-black font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300 font-nunito-sans">
+          <a href='/contact-us' className="group inline-flex items-center px-8 py-4 border-2 border-black text-black font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300 font-nunito-sans">
             <span>Get in touch with us!</span>
             <svg 
               className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" 
@@ -191,7 +192,7 @@ export default function NaturePuritySection() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

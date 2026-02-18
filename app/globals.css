@@ -39,6 +39,21 @@
   }
 }
 
+/* Blinking Cursor Animation for Typewriter */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s ease-in-out infinite;
+}
+
 /* Typewriter Animation Keyframes */
 @keyframes typewriter-line1 {
   0% {
@@ -631,8 +646,10 @@ html {
   cursor: pointer;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.1) inset;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
@@ -650,8 +667,7 @@ html {
     135deg,
     rgba(255, 255, 255, 0.9) 0%,
     rgba(255, 255, 255, 0.6) 30%,
-    rgba(255, 255, 255, 0.2) 60%,
-    /* transparent 100% */
+    rgba(255, 255, 255, 0.2) 60% /* transparent 100% */
   );
   border-radius: 50%;
   filter: blur(1px);
@@ -687,8 +703,10 @@ html {
   /* border-top-right-radius: 25px; */
   /* border-bottom-left-radius: 25px; */
   border-bottom-right-radius: 25px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
-    0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 .glass-bubble.selected {
@@ -701,43 +719,65 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(25px) saturate(200%);
   -webkit-backdrop-filter: blur(25px) saturate(200%);
-  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+  box-shadow:
+    0 8px 32px rgba(255, 255, 255, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.05) inset;
   text-shadow: none;
 }
 
-/* Checkbox specific styling for rounded appearance */
-input[type="checkbox"].glass-bubble {
-  width: 20px;
-  height: 20px;
+/* Checkbox specific styling for premium appearance */
+.fien-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
   cursor: pointer;
   position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
+  outline: none;
 }
 
-input[type="checkbox"].glass-bubble:checked {
-  background: radial-gradient(
-    circle at 35% 20%,
-    rgba(6, 182, 212, 0.8) 0%,
-    rgba(6, 182, 212, 0.6) 50%,
-    rgba(6, 182, 212, 0.4) 80%,
-    rgba(6, 182, 212, 0.3) 100%
-  );
+.fien-checkbox:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
-input[type="checkbox"].glass-bubble:checked::after {
-  content: "✓";
+.fien-checkbox:checked {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.fien-checkbox:checked::after {
+  content: "";
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
+  width: 5px;
+  height: 9px;
+  border: solid #05472a;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+  animation: checkmarkAppear 0.2s ease-out forwards;
+}
+
+@keyframes checkmarkAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) rotate(45deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1);
+  }
 }
 
 /* Slick Carousel Vertical Slider Styles */
@@ -886,4 +926,13 @@ input[type="checkbox"].glass-bubble:checked::after {
 
 .animate-scroll-reverse {
   animation: scroll-reverse 30s linear infinite;
+}
+
+@font-face {
+  font-family: "Tomato";
+  src:
+    url("/fonts/Tomato-Regular.woff2") format("woff2"),
+    url("/fonts/Tomato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }

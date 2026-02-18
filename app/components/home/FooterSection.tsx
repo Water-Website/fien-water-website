@@ -3,6 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandWhatsapp,
+} from '@tabler/icons-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -26,12 +33,22 @@ const columnContainer = {
 };
 
 const FooterSection = () => {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Or a skeleton/placeholder matching server layout
+  }
+
   return (
     <footer className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/connect-with-us-bg.png"
+          src="/home-tab/footer-section/footer.png"
           alt="Footer background"
           fill
           className="object-cover"
@@ -67,7 +84,8 @@ const FooterSection = () => {
               className="text-white max-w-4xl mx-auto font-nunito-sans"
               style={{ fontSize: '18px', fontWeight: 300, lineHeight: '100%' }}
             >
-              Fien is an advertising agency that helps brands connect with people by printing their logo or message on everyday-use products. We turn simple items into moving billboards for your brand.
+              FIEN is a creative agency built to turn bold ideas into powerful brand statements. We design, strategize, and tell stories that help brands stand out and stay remembered.
+
             </motion.p>
           </div>
 
@@ -85,11 +103,18 @@ const FooterSection = () => {
                 Quick Actions
               </h3>
               <ul>
-                {['Home','About Us','Our Services','Fien Wanter','Brands','Contact Us'].map((item, i) => (
+                {[
+                  { name: 'Home', href: '/' },
+                  { name: 'About Us', href: '/#about-us-section' },
+                  { name: 'Our Services', href: '/services' },
+                  { name: 'Fien Water', href: '/fien-water' },
+                  { name: 'Brands', href: '/#our-work-section' },
+                  { name: 'Contact Us', href: '/contact-us' }
+                ].map((item, i) => (
                   <li key={i} className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3" />
-                    <a href="#" className="text-white hover:text-cyan-400 transition-colors duration-300 font-nunito-sans" style={{ fontSize: '16px', lineHeight: '45px' }}>
-                      {item}
+                    <a href={item.href} className="text-white hover:text-cyan-400 transition-colors duration-300 font-nunito-sans" style={{ fontSize: '16px', lineHeight: '45px' }}>
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -102,11 +127,22 @@ const FooterSection = () => {
                 Connect with Us
               </h3>
               <ul>
-                {['Behance','Instagram','LinkedIn','Dribbble','Careers','Chat With Us'].map((item, i) => (
+                {[
+                  { name: 'Facebook', href: 'https://www.facebook.com/share/1DLHZYbgJt/'  },
+                  { name: 'Instagram', href: 'https://www.instagram.com/fien.it?igsh=MTk0NG8wM3kweDB0OA=='},
+                  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/aventis-marketing-enterprises-llp-93960736b'},
+                  { name: 'Twitter', href: 'https://x.com/fienitt?t=kLhYqqx7Nf14f7ZPAey8-g&s=09'},
+                  { name: 'Chat With Us', href: 'https://wa.me/919560402187'},
+                ].map((item, i) => (
                   <li key={i} className="flex items-center">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3" />
-                    <a href="#" className="text-white hover:text-cyan-400 transition-colors duration-300 font-nunito-sans" style={{ fontSize: '16px', lineHeight: '35px' }}>
-                      {item}
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-cyan-400 transition-colors duration-300 font-nunito-sans"
+                      style={{ fontSize: '16px', lineHeight: '35px' }}
+                    >
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -123,16 +159,16 @@ const FooterSection = () => {
                   Fien Water Studio
                 </p>
                 <p className="text-white font-nunito-sans" style={{ fontSize: '16px' }}>
-                  DLF Phase 2, Gurugram, Haryana
+                  B-4/3, Ground Floor, Model Town 1, Delhi
                 </p>
                 <p className="text-white font-nunito-sans" style={{ fontSize: '16px' }}>
-                  122002, India
+                  110009, India
                 </p>
                 <p className="text-white font-nunito-sans" style={{ fontSize: '16px' }}>
-                  📞 +91-98XXXXXX00
+                  📞 +91-9560402187 | +91-9810728831
                 </p>
                 <p className="text-white font-nunito-sans" style={{ fontSize: '16px' }}>
-                  ✉️ hello@fienwater.in
+                  ✉️ Info@fien.in | aventismarketing5@gmail.com
                 </p>
               </div>
             </motion.div>
@@ -148,14 +184,14 @@ const FooterSection = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex flex-wrap gap-6 mb-4 md:mb-0">
-                {['Privacy Policy','Cookie Policy','Terms & Condition'].map((item, i) => (
+                {['Privacy Policy'].map((item, i) => (
                   <a key={i} href="#" className="text-white hover:text-cyan-400 transition-colors duration-300 font-nunito-sans" style={{ fontSize: '14px' }}>
                     {item}
                   </a>
                 ))}
               </div>
               <p className="text-white font-nunito-sans" style={{ fontSize: '14px' }}>
-                © 2025 FIEN
+                © 2026 FIEN
               </p>
             </div>
           </motion.div>

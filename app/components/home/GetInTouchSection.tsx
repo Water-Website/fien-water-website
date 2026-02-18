@@ -51,6 +51,7 @@ const GetInTouchSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -93,6 +94,7 @@ const GetInTouchSection = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           message: ''
         });
       } else {
@@ -133,7 +135,7 @@ const GetInTouchSection = () => {
                   className="text-gray-600 font-nunito-sans"
                   style={{ fontSize: '16px', fontWeight: 600, lineHeight: '160%' }}
                 >
-                  Have a project in mind? Let's start the conversation. Our team is ready to bring your brand vision to life through strategic packaging and creative storytelling.
+                  Let’s work together to build meaningful brand touchpoints that drive engagement and long-term visibility.
                 </p>
               </motion.div>
 
@@ -164,11 +166,23 @@ const GetInTouchSection = () => {
                 </motion.div>
 
                 <motion.div variants={fieldAnimation as any}>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Phone Number"
+                    className="w-full px-4 py-4 border-b-2 border-gray-300 focus:border-cyan-500 outline-none transition-colors duration-300 text-gray-900 placeholder-gray-500 bg-transparent"
+                    required
+                  />
+                </motion.div>
+
+                <motion.div variants={fieldAnimation as any}>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Tell us about yourself"
+                    placeholder="How can we help you?"
                     rows={1}
                     className="w-full px-4 py-4 border-b-2 border-gray-300 focus:border-cyan-500 outline-none resize-none transition-colors duration-300 text-gray-900 placeholder-gray-500 bg-transparent"
                     required
@@ -215,15 +229,17 @@ const GetInTouchSection = () => {
 
             {/* Bottle Image 1 */}
             <motion.div
-              className="absolute -top-30 -right-32 w-[350px] h-[500px] -rotate-12 z-30"
+              className="absolute -top-42 -right-32 w-[350px] h-[500px] z-30"
+              style={{ rotate: -8 }}
               custom={2.0}
               variants={bottleVariants as any}
               initial="hidden"
               whileInView="visible"
+              whileHover={{ rotate: -15, scale: 1.05, transition: { duration: 0.4 } }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <Image
-                src="/get-in-touch/get-in-touch-one.png"
+                src="/home-tab/get-in-touch/get-in-touch-top.png"
                 alt="Premium water bottle design"
                 fill
                 className="object-contain drop-shadow-2xl"
@@ -237,10 +253,11 @@ const GetInTouchSection = () => {
               variants={bottleVariants as any}
               initial="hidden"
               whileInView="visible"
+              whileHover={{ rotate: 8, scale: 1.05, transition: { duration: 0.4 } }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <Image
-                src="/get-in-touch/get-in-touch-two.png"
+                src="/home-tab/get-in-touch/get-in-touch-blue-bottle.png"
                 alt="Elegant bottle branding"
                 fill
                 className="object-contain drop-shadow-2xl"

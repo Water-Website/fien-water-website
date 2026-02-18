@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { IconArrowRight, IconArrowUpRight } from '@tabler/icons-react';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useInView } from 'framer-motion';
 
 const textVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -125,8 +125,11 @@ const image1Variants: Variants = {
 };
 
 const BottleBrandSection = () => {
+  const imagesContainerRef = useRef(null);
+  const isInView = useInView(imagesContainerRef, { once: true, amount: 0.1, margin: "-100px" });
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+    <section className="min-h-screen bg-black relative overflow-hidden">
       {/* Background Wave */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -156,9 +159,9 @@ const BottleBrandSection = () => {
                   custom={0}
                   variants={textVariants}
                 >
-                  Designs That Speak.
+                  Designs That Perform.
                   <br />
-                  <span className="text-cyan-400">Brands That Shine.</span>
+                  <span className="text-cyan-400">Brands That matter.</span>
                 </motion.h1>
 
                 <motion.p 
@@ -167,10 +170,7 @@ const BottleBrandSection = () => {
                   custom={1}
                   variants={textVariants}
                 >
-                  We craft designs that don't just look stunning – they perform, 
-                  engage, and leave a lasting impact. From bold branding to sleek 
-                  packaging, our portfolio highlights the innovation and artistry 
-                  we bring to every project.
+                  We craft visuals and identities that don’t just look good; they leave a lasting impression.
                 </motion.p>
 
                 <motion.button
@@ -197,62 +197,61 @@ const BottleBrandSection = () => {
             </div>
 
             {/* Right Images Grid */}
-            <div className="relative h-[650px] w-full overflow-visible">
+            <div 
+              ref={imagesContainerRef}
+              className="relative h-[650px] w-full overflow-visible"
+            >
               
               {/* Image 4 - First to appear */}
               <motion.div
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
+                animate={isInView ? "visible" : "hidden"}
                 variants={image4Variants}
-                className="absolute -top-30 -right-40 w-[300px] h-[400px] -rotate-6 rounded-3xl transform transition-transform duration-500 z-20 hover:rotate-6 drop-shadow-2xl"
+                className="absolute -top-[25px] -right-[160px] w-[320px] h-[400px] -rotate-6 rounded-3xl transform transition-transform duration-500 z-10 hover:rotate-6 drop-shadow-2xl"
                 style={{
                   filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
                 }}
               >
-                <Image src="/bottle-brand/brand-four.png" alt="brand design 4" className="" width={300} height={400} />
+                <Image src="/home-tab/brands/bottle-brand-4.png" alt="brand design 4" className="w-full h-full object-cover rounded-3xl" width={320} height={400} />
               </motion.div>
 
               {/* Image 3 - Second to appear */}
               <motion.div
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
+                animate={isInView ? "visible" : "hidden"}
                 variants={image3Variants}
                 className="absolute top-32 -right-12 w-[300px] h-[400px] rotate-20 rounded-3xl transform transition-transform duration-500 z-30 hover:rotate-6 drop-shadow-2xl"
                 style={{
                   filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
                 }}
               >
-                <Image src="/bottle-brand/brand-three.png" alt="brand design 3" className="" width={300} height={400} />
+                <Image src="/home-tab/brands/bottle-brand-3.png" alt="brand design 3" className="w-full h-full object-cover rounded-3xl" width={300} height={400} />
               </motion.div>
 
               {/* Image 2 - Third to appear */}
               <motion.div
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
+                animate={isInView ? "visible" : "hidden"}
                 variants={image2Variants}
-                className="absolute top-64 right-36 w-[350px] h-[500px] rounded-3xl transform transition-transform duration-500 z-30 hover:rotate-6 drop-shadow-2xl"
+                className="absolute top-64 right-36 w-[300px] h-[400px] rounded-3xl transform transition-transform duration-500 z-30 hover:rotate-6 drop-shadow-2xl"
                 style={{
                   filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
                 }}
               >
-                <Image src="/bottle-brand/brand-two.png" alt="brand design 2" className="" width={350} height={500} />
+                <Image src="/home-tab/brands/bottle-brand-2.png" alt="brand design 2" className="w-full h-full object-cover rounded-3xl" width={300} height={400} />
               </motion.div>
 
               {/* Image 1 - Last to appear */}
               <motion.div
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
+                animate={isInView ? "visible" : "hidden"}
                 variants={image1Variants}
                 className="absolute -bottom-20 -left-20 w-[300px] h-[400px] rounded-3xl transform transition-transform duration-500 z-40 hover:rotate-6 drop-shadow-2xl"
                 style={{
                   filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
                 }}
               >
-                <Image src="/bottle-brand/brand-one.png" alt="brand design 1" className="" width={300} height={400} />
+                <Image src="/home-tab/brands/brand-1.png" alt="brand design 1" className="w-full h-full object-cover rounded-3xl" width={300} height={400} />
               </motion.div>
 
             </div>

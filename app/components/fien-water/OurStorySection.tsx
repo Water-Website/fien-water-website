@@ -9,48 +9,48 @@ export default function OurStorySection() {
   const timelineItems = [
     {
       side: 'left',
-      title: "Born from Nature's Depths",
-      description: "Our story begins beneath the earth's surface where untouched aquifers hold pristine, mineral-rich water.",
+      title: "Ancient Wisdom Meets Modern Technology",
+      description: "We combine herbal wellness practices with precision science, followed by strict infusion-to-packaging quality control.",
       icon: (
         <RiLeafFill className="w-7 h-7 text-[#05472A]" />
       ),
     },
     {
       side: 'right',
-      title: 'The Discovery of Balance',
-      description: "We realized that true hydration isn't just about water — it's about restoring harmony within.",
+      title: 'Hydration is self-care',
+      description: "Fien is a  space where nature, science, and self-care come together. With every drop, you rediscover hydration as something fresh, honest, and deeply human.",
       icon: (
         <RiDropFill className="w-7 h-7 text-[#05472A]" />
       ),
     },
     {
       side: 'left',
-      title: 'Infused with Wellness',
-      description: 'Every bottle of FIEN carries more than hydration — it carries intention. Our signature herbal infusions are carefully selected to enhance immunity, energy, and inner calm, making every sip a step toward better living.',
+      title: 'Sustainability at the Core',
+      description: 'We are Eco-conscious and hold lightweight packaging , having reduced environmental footprint without compromising strength or aesthetics. We bring purity with purpose.',
       icon: (
         <RiCloudFill className="w-7 h-7 text-[#05472A]" />
       ),
     },
     {
       side: 'right',
-      title: 'From Ancient Traditions to Modern Wellness',
-      description: "Rooted in traditional herbal sciences, FIEN transforms age-old healing elements into a modern lifestyle experience. It's where timeless remedies meet contemporary purity.",
+      title: 'Richness we preserve',
+      description: "We turn hydration into a moment of mindful balance by bringing a blend which helps in healing and vitality.",
       icon: (
        <RiSunFill className="w-7 h-7 text-[#05472A]" />
       ),
     },
     {
       side: 'left',
-      title: 'Sustainably Sourced, Consciously Crafted',
-      description: 'From the source to the sip, FIEN is guided by sustainability. We respect the natural flow of our aquifers and use eco-conscious packaging to ensure wellness for both you and the planet.',
+      title: 'Purity You Trust',
+      description: 'How do we stand by purity? State-of-the-art filtration, UV sterilization for safety and 100% contactless bottling',
       icon: (
         <RiRecycleFill className="w-7 h-7 text-[#05472A]" />
       ),
     },
     {
       side: 'right',
-      title: 'The FIEN Promise',
-      description: "FIEN is more than water — it's a daily ritual of renewal. With every drop, we promise purity, balance, and a connection to the natural rhythm that sustains life itself.",
+      title: 'Designed with Meaning',
+      description: "Where aesthetics serve a deeper cultural, emotional and functional purpose.",
       icon: (
         <RiBardFill className="w-7 h-7 text-[#05472A]" />
       ),
@@ -74,7 +74,7 @@ export default function OurStorySection() {
             lineHeight: '100%',
             letterSpacing: '0px'
           }}>
-            Our Story
+            The story behind Fien Water
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto font-nunito-sans leading-relaxed" style={{
             fontSize: '16px',
@@ -82,7 +82,7 @@ export default function OurStorySection() {
             lineHeight: '100%',
             letterSpacing: '0px'
           }}>
-            Every drop of FIEN Water is drawn from deep, pristine aquifers — enriched with essential minerals and herbal infusions that restore balance, vitality, and inner harmony.
+            It's not just water, it's an experience of pristine balance and clarity.
           </p>
         </motion.div>
 

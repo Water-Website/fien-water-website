@@ -9,7 +9,7 @@ export default function SipSection() {
 
   return (
     <section 
-      className="relative min-h-screen w-full overflow-hidden cursor-pointer"
+      className="relative overflow-hidden cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -23,7 +23,7 @@ export default function SipSection() {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/fien-water-images/sip/sip-before.png"
+            src="/fien-water-images/sip/sip-main.png"
             alt="FIEN Water Bottle"
             fill
             className="object-cover"
@@ -39,7 +39,7 @@ export default function SipSection() {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/fien-water-images/sip/sip-after-hover.png"
+            src="/fien-water-images/sip/sip-main-hover.png"
             alt="FIEN Water Bottle Hovered"
             fill
             className="object-cover"
@@ -65,9 +65,9 @@ export default function SipSection() {
               letterSpacing: '0px'
             }}
           >
-            It Took Nature Years to Perfect.{' '}
+            Redefined by nature.{' '}
             <span className="block mt-2">
-              FIEN Brings It to You in Every Sip.
+            Served by us. Fien water.
             </span>
           </motion.h1>
         </div>

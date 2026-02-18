@@ -28,7 +28,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/Aura.mp4" type="video/mp4" />
+          <source src="/home-tab/hero-section/Aura.mp4" type="video/mp4" />
           {/* Fallback for browsers that don't support video */}
           <div className="absolute inset-0 bg-black"></div>
         </video>
@@ -46,77 +46,76 @@ export default function Home() {
       {/* About Us Section - Appears on scroll */}
       <section className="scroll-snap-section">
         <AboutUsSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Journey Section - Our Creative Process */}
       <section className="scroll-snap-section">
         <JourneySection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Services Section - End-to-End Services */}
       <section className="scroll-snap-section">
         <ServicesSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Contact Section - Great Design Quote */}
-      <section className="scroll-snap-section">
+      <section className="">
         <ContactSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Mission Section - Our Mission & Vision */}
       <section className="scroll-snap-section">
         <MissionSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Statistics Section - Key Metrics */}
       <section className="">
         <StatisticsSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Our Work Section - Portfolio Showcase */}
       <section className="scroll-snap-section">
         <OurWorkSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Bottle Brand Section - Designs That Speak */}
       <section className="scroll-snap-section">
         <BottleBrandSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Testimonials Section - Customer Reviews */}
       <section className="scroll-snap-section">
         <TestimonialsSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* FAQ Section - Frequently Asked Questions */}
       <section className="scroll-snap-section">
         <FaqSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Get in Touch Section - Contact Form */}
       <section className="scroll-snap-section">
         <GetInTouchSection />
-        <BackToTopButton position="bottom-right" />
+        {/* <BackToTopButton position="bottom-right" /> */}
       </section>
       
       {/* Footer Section - Company Info & Links */}
         <section className="scroll-snap-section">
           <FooterSection />
-          <BackToTopButton position="bottom-right" />
+          {/* <BackToTopButton position="bottom-right" /> */}
         </section>
-        </div>
-        
-      
+      </div>
+      <BackToTopButton position="bottom-right" />
     </>
   );
 }

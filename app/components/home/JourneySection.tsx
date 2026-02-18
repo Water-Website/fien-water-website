@@ -13,11 +13,11 @@ const JourneySection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const phases = [
-    { label: 'Discovery', size: 'w-64 h-64' },
-    { label: 'Strategy', size: 'w-80 h-80' },
-    { label: 'Concept', size: 'w-64 h-64' },
-    { label: 'Design System', size: 'w-96 h-96' },
-    { label: 'Production', size: 'w-72 h-72' }
+    { label: 'Immersion', size: 'w-64 h-64' },
+    { label: 'Articulation', size: 'w-80 h-80' },
+    { label: 'Curation', size: 'w-64 h-64' },
+    { label: 'Realization', size: 'w-96 h-96' },
+    { label: 'Resonance', size: 'w-72 h-72' }
   ];
 
   // Intersection Observer to trigger animations when section is visible
@@ -127,12 +127,12 @@ const JourneySection = () => {
                 letterSpacing: '0px'
               }}
             >
-              Our End-to-End Creative Journey
+              How do we make It Happen?
             </h2>
             <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
-              From discovery and strategy to design and production, every stage is crafted to transform ideas into impactful
-              <br className="hidden md:block" />
-              brand experiences.
+              Building your creative journey
+              {/* <br className="hidden md:block" />
+              brand experiences. */}
             </p>
           </div>
 

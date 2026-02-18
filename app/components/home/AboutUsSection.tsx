@@ -19,15 +19,15 @@ const AboutUsSection = () => {
 
   const images = [
     {
-      src: '/about-us/about-us-first.png',
+      src: '/about-us/about-us-1.png',
       alt: 'About Us - First Image'
     },
     {
-      src: '/about-us/about-us-second.png',
+      src: '/about-us/about-us-2.png',
       alt: 'About Us - Second Image'
     },
     {
-      src: '/about-us/about-us-third.png',
+      src: '/about-us/about-us-3.png',
       alt: 'About Us - Third Image'
     }
   ];
@@ -133,7 +133,7 @@ const AboutUsSection = () => {
                 letterSpacing: '0px'
               }}
             >
-              Our Story, Your Visibility
+              A Shared Story, A Shared Brand
             </h2>
           <p className="text-gray-600 text-lg max-w-5xl mx-auto leading-relaxed font-nunito-sans"
           style={{
@@ -142,9 +142,9 @@ const AboutUsSection = () => {
             lineHeight: '24px',
             letterSpacing: '0px'
           }}>
-            We believe brands should live beyond screens. That's why we design promotional products that travel with your audience,
+            As a brand, we advocate for impact that lasts, not just on screens or in notions, but in experiences, 
             <br className="hidden md:block" />
-            creating daily connections that last.
+            in hearts, and in everyday life.
           </p>
         </div>
 
@@ -209,10 +209,8 @@ const AboutUsSection = () => {
             letterSpacing: '0px',
           }}
           >
-            FIEN is a product marketing venture dedicated to making brands part of people's everyday lives. We specialize in transforming simple,
-            everyday items like water bottles and cups into powerful branding tools that travel with your audience. By combining creativity, strategy,
-            and high-quality production, we help businesses go beyond digital impressions and create real-world connections. From cafes and
-            corporate offices to events and retail spaces, FIEN ensures your brand is seen, remembered, and experienced where it matters most.
+           At FIEN, we believe branding shouldn’t stop at screens; It should live in your hands, blend into your habits, and become a part of your everyday lives. That’s why we transform simple essentials into powerful brand storytellers that travel wherever you want to go. 
+           We at FIEN ensure your brand is not only seen but carried, remembered, and experienced with every step, every day.
           </p>
         </div>
 
@@ -222,7 +220,8 @@ const AboutUsSection = () => {
             ? 'opacity-100 translate-y-0 scale-100' 
             : 'opacity-0 translate-y-8 scale-95'
         }`}>
-          <button 
+          <a
+            href="/services" 
             className="inline-flex items-center gap-2 bg-transparent border text-gray-700 px-4 py-2 rounded-full hover:bg-black hover:text-white transition-colors duration-200"
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
@@ -244,7 +243,7 @@ const AboutUsSection = () => {
                 }`} 
               />
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -9,24 +9,24 @@ const StatisticsSection = () => {
   const statistics = [
     {
       icon: <RiTruckFill className="w-12 h-12 text-white" />,
-      number: "500+",
-      description: "Unique Campaigns Delivered",
+      number: "6k+",
+      description: "Bottles Deployed",
     },
     {
       icon: <RiLightbulbFlashFill className="w-12 h-12 text-white" />,
-      number: "1M+",
-      description: "Daily Impressions Created",
+      number: "100%",
+      description: "Brand Focused Approach",
     },
     {
       icon: <RiBox3Fill className="w-12 h-12 text-white" />,
-      number: "100+",
-      description: "Product Variants Branded",
+      number: "90%+",
+      description: "Positive Client Feedback ",
     },
-    {
-      icon: <RiFeedbackFill className="w-12 h-12 text-white" />,
-      number: "99%",
-      description: "Positive Client Feedback",
-    },
+    // {
+    //   icon: <RiFeedbackFill className="w-12 h-12 text-white" />,
+    //   number: "99%",
+    //   description: "Positive Client Feedback",
+    // },
   ];
 
   // Parent container animation
@@ -57,7 +57,7 @@ const StatisticsSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/plastic-free.png"
+          src="/home-tab/statistics/stats.png"
           alt="Plastic Free Background"
           fill
           priority
@@ -70,7 +70,7 @@ const StatisticsSection = () => {
       <div className="relative z-10 min-h-[50vh] flex items-center justify-center px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
             variants={container}
             initial="hidden"
             whileInView="visible"

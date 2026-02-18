@@ -11,11 +11,11 @@ export default function OurFienWaterSection() {
   
   const images = [
     {
-      src: "/services-tab/our-fien-water/fien-water-image-one.png",
+      src: "/services-tab/our-fien-water/fien-1.png",
       alt: "Fien Water Image One"
     },
     {
-      src: "/services-tab/our-fien-water/fien-water-image-two.png", 
+      src: "/services-tab/our-fien-water/fien-2.png", 
       alt: "Fien Water Image Two"
     }
   ];
@@ -29,7 +29,7 @@ export default function OurFienWaterSection() {
   }, [images.length]);
 
   return (
-    <section className="relative min-h-screen bg-[#05472A]">
+    <section className="relative min-h-screen bg-[#05472A] p-2">
       {/* Background Vector - Left Side Only */}
       <div className="absolute left-0 top-0 bottom-0 w-1/2 z-0 flex items-center justify-center">
         <div className="relative w-full h-full">
@@ -58,7 +58,7 @@ export default function OurFienWaterSection() {
                 <Image
                   src="/services-tab/our-fien-water/quote.png"
                   alt="Quote decoration"
-                  width={100}
+                  width={80}
                   height={60}
                   className="inline-block"
                 />
@@ -136,13 +136,51 @@ export default function OurFienWaterSection() {
             
             <div className="space-y-6">
               <p className="text-white text-lg leading-relaxed font-nunito-sans max-w-2xl">
-                Fien Water is more than just hydration — it's a mindful experience. 
-                Crafted with purity and infused with subtle herbal notes, every bottle 
-                delivers freshness that nurtures both body and mind. We believe water should not only quench thirst but also elevate wellness, 
-                which is why our herbal water is tested for quality and packaged responsibly 
-                in recyclable bottles.
+              We don't just provide water, we cater to your wellness. Each water bottle we supply, each sip you intake is infused with gentle herbal notes that refresh your senses and restore balance from within.
               </p>
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
+              <h3 className="text-2xl font-bold text-white font-nunito-sans" 
+              style={{
+                fontSize: '16px',
+                fontWeight: 900,
+                lineHeight: '24px',
+                letterSpacing: '0px'
+              }}
+              >Why Choose this WELLNESS?</h3>
+
+              <ul className="">
+                {[
+                  'Infused with Nature: Blended with subtle herbal essences to rejuvenate both body and mind.',
+                  'Pure, Tested, Trusted: Each batch is quality-tested to ensure uncompromised freshness and purity.',
+                  'Wellness Meets Lifestyle: Designed for those who see hydration as part of a conscious, elevated routine, not just a habit.'
+                ].map((item, idx) => (
+                  <motion.li
+                    key={idx}
+                    initial={{ opacity: 0, x: -18 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.45, delay: 2.0 + idx * 0.08 }}
+                    viewport={{ once: true }}
+                    className="flex items-start text-white font-nunito-sans"
+                  >
+                    <span className="w-1.5 h-1.5 bg-white rounded-full mt-2 mr-2 flex-shrink-0" />
+                    <span className="text-xs font-nunito-sans"
+                    style={{
+                      fontSize: '15px',
+                      fontWeight: 500,
+                      lineHeight: '24px',
+                      letterSpacing: '0px'
+                    }}>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -151,7 +189,7 @@ export default function OurFienWaterSection() {
               viewport={{ once: true }}
               className="flex items-center justify-center lg:justify-start"
             >
-              <Link href="/fien-water">
+              <a href="/fien-water">
                 <button className="group inline-flex items-center px-8 py-4 border text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 font-nunito-sans shadow-lg hover:shadow-xl">
                   <span>Go to FIEN Water</span>
                   <span className="relative w-5 h-5 ml-2">
@@ -165,7 +203,7 @@ export default function OurFienWaterSection() {
                     />
                   </span>
                 </button>
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -177,7 +215,7 @@ export default function OurFienWaterSection() {
             viewport={{ once: true }}
             className="lg:w-1/2 flex items-center justify-center mt-12 lg:mt-0"
           >
-            <div className="relative w-[750px] h-[750px]">
+            <div className="relative w-[700px] h-[700px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -188,13 +226,13 @@ export default function OurFienWaterSection() {
                     duration: 0.6,
                     ease: "easeInOut"
                   }}
-                  className="absolute inset-0"
+                  className="absolute inset-0 rounded-xl"
                 >
                   <Image
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
                     fill
-                    className="object-contain drop-shadow-2xl h-full w-full"
+                    className="object-contain rounded-xl drop-shadow-2xl h-full w-full"
                     priority
                   />
                 </motion.div>

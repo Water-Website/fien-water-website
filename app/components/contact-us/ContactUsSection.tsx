@@ -24,14 +24,12 @@ const ContactUsSection = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const interests = [
-    'Custom Branded Water Bottles',
-    'Herbal Infused Water Solutions',
-    'Corporate Gifting',
-    'Wellness Hampers',
-    'Wedding Hydration Services',
-    'Supermarket Distribution',
-    'Eco-Friendly Packaging Solutions',
-    'Private Label Water Production'
+    'Custom Branded Bottles',
+    'Herbal Infused & Functional Water Solutions',
+    'Brand Partnerships & Collaborations',
+    'Promotional Cups & Drinkware',
+    'Corporate & Event Hydration Campaign',
+    'Bulk Supply & Distribution Partnerships'
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -131,7 +129,7 @@ Interests: ${formData.interests.length > 0 ? formData.interests.join(', ') : 'No
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/contact-us/contact-us-bg.png"
+          src="/contact-us/contact-us-hero-bg.png"
           alt="Contact Us Background"
           fill
           className="object-cover"
@@ -160,9 +158,9 @@ Interests: ${formData.interests.length > 0 ? formData.interests.join(', ') : 'No
               className="mb-6 font-bold font-nunito-sans items-start text-white"
               style={{ fontSize: '64px', fontWeight: 900, lineHeight: '110%', letterSpacing: '-2px' }}
             >
-              Let's Connect and Build
+              Got an Idea? 
               <br />
-              Something Meaningful Together
+              Let’s Make It possible.
             </h1>
           </motion.div>
 
@@ -325,7 +323,7 @@ Interests: ${formData.interests.length > 0 ? formData.interests.join(', ') : 'No
                     name="privacyAccepted"
                     checked={formData.privacyAccepted}
                     onChange={handleInputChange}
-                    className="glass-bubble"
+                    className="fien-checkbox mt-1"
                     required
                   />
                   <label className="text-white text-sm font-nunito-sans leading-relaxed">
@@ -526,7 +524,7 @@ Interests: ${formData.interests.length > 0 ? formData.interests.join(', ') : 'No
                         className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
                       >
                         <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-1.297c-.875.807-2.026 1.297-3.323 1.297s-2.448-.49-3.323-1.297c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323z"/>
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                         </svg>
                       </a>
 
@@ -556,7 +554,7 @@ Interests: ${formData.interests.length > 0 ? formData.interests.join(', ') : 'No
                         className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
                       >
                         <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.341-.09.381-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624.001 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017.001z"/>
+                          <path d="M12.017 0c-6.627 0-12 5.373-12 12 0 5.091 3.169 9.435 7.644 11.189-.105-.951-.199-2.411.042-3.45.217-.936 1.403-5.955 1.403-5.955s-.358-.718-.358-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.223.085.345-.089.378-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.647 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.358-.629-2.75-1.377l-.749 2.853c-.27 1.04-.991 2.35-1.487 3.141 1.761.503 3.626.776 5.556.776 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>

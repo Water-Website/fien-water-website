@@ -20,21 +20,19 @@ export default function ContactUsPage() {
         {/* Contact Us Form Section */}
         <section className="scroll-snap-section relative" data-section="contact-us">
           <ContactUsSection />
-          <BackToTopButton position="bottom-right" />
         </section>
 
         {/* Testimonials Section */}
         <section className="scroll-snap-section relative">
           <TestimonialsSection />
-          <BackToTopButton position="bottom-right" />
         </section>
         
         {/* Footer Section */}
         <section className="scroll-snap-section relative">
           <FooterSection />
-          <BackToTopButton position="bottom-right" />
         </section>
       </div>
+      <BackToTopButton position="bottom-right" />
     </>
   );
 }

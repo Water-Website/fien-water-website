@@ -12,33 +12,33 @@ const FaqSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services does your agency provide?",
+      question: "What products and services does FIEN as a Brand offer?",
       answer:
-        "We specialize in product branding, packaging design, creative strategy, and custom brand experiences. From concept to production, we ensure your brand stands out with designs that resonate with your audience.",
+        "FIEN offers packaged drinking water, custom-branded bottles and cups, and product-led branding solutions with campaign, customisation, and targeted distribution support.",
     },
     {
       id: 2,
-      question: "Do you offer eco-friendly and sustainable packaging solutions?",
+      question: "Who can partner with FIEN?",
       answer:
-        "Yes, we prioritize sustainable materials and eco-conscious design practices to create packaging that aligns with your brand values while reducing environmental impact.",
+        "FIEN works with corporates, startups, event organizers, gyms, cafés, retail brands, wellness spaces, and institutions looking to enhance brand visibility through physical, high-impact distribution.",
     },
     {
       id: 3,
-      question: "Can you handle both design and production?",
+      question: "Is FIEN a water brand or a marketing agency?",
       answer:
-        "Absolutely! Our process covers everything from ideation and concept design to production-ready files, ensuring a seamless journey from vision to reality.",
+        "FIEN operates at the intersection of both. We are a product marketing platform that uses drinking water and cups as high-impact branding tools, while also offering FIEN-branded water as a standalone retail product.",
     },
     {
       id: 4,
-      question: "How long does a typical project take?",
+      question: "What makes FIEN water different from regular bottled water?",
       answer:
-        "Timelines vary based on project scope, but most branding and packaging design projects take between 2-6 weeks. We provide a clear schedule during the discovery phase.",
+        "FIEN Water goes beyond hydration. With a balanced mineral profile and natural alkalinity that helps reduce body acidity, our bottles double as branding assets for everyday visibility.",
     },
     {
       id: 5,
-      question: "Do you work with startups as well as established brands?",
+      question: "How does FIEN help improve brand recall?",
       answer:
-        "Yes, we collaborate with businesses of all sizes - from emerging startups lookingto establish a unique identity to established brands aiming to refresh their design approach.",
+        "By placing branded products in daily-use scenarios, FIEN enables repeated exposure over time, creating stronger brand recall compared to one-time digital impression.",
     },
   ];
 

@@ -43,7 +43,7 @@ export default function OurCupsSection() {
             viewport={{ once: true }}
             className="text-6xl md:text-7xl font-extrabold text-gray-900 font-poppins"
           >
-            Customised Cups
+            Brand stories that connect
           </motion.h2>
 
           {/* Main cups image */}
@@ -66,7 +66,7 @@ export default function OurCupsSection() {
             >
               {/* Default state image */}
               <motion.img
-                src={"/services-tab/our-cups/cups-default.png"}
+                src={"/services-tab/our-cups/our-cups-default.png"}
                 alt="Customised Cups Default"
                 className="absolute inset-0 w-full h-full object-contain"
                 animate={{ 
@@ -83,7 +83,7 @@ export default function OurCupsSection() {
               
               {/* Hover state image */}
               <motion.img
-                src={"/services-tab/our-cups/cups-on-hover.png"}
+                src={"/services-tab/our-cups/our-cups-after.png"}
                 alt="Customised Cups Hover"
                 className="absolute inset-0 w-full h-full object-contain"
                 animate={{ 
@@ -131,14 +131,58 @@ export default function OurCupsSection() {
                   letterSpacing: '0px'
                 }}
               >
-                At FIEN, we believe that everyday items have the power to create extraordinary brand
-                connections. Our custom-branded water bottles are more than just containers — they are a
-                reflection of your brand's identity, carried into people's daily routines. Whether at
-                the gym, in the office, or on the go, our bottles keep your brand visible, memorable,
-                and trusted.
+                At Fien, we believe a cup is more than a container, it’s a daily ritual and a powerful storytelling space. We create custom-branded cups where every detail, from color to texture, reflects your brand’s personality and purpose.
               </p>
 
-              <p className="text-gray-700 text-lg leading-relaxed font-nunito-sans"
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 font-nunito-sans" 
+              style={{
+                fontSize: '16px',
+                fontWeight: 900,
+                lineHeight: '24px',
+                letterSpacing: '0px'
+              }}
+              >Why Choose FIEN Cups?</h3>
+
+              <ul className="inline-block text-left">
+                {[
+                  'Designed for Your Brand: Every cup echoes your voice, minimal, bold, or expressive.',
+                  'More than just a design: Our designs build connection, not just visibility.',
+                  'Target your audience: From cafés to events, your brand stays in hand and in mind.'
+                ].map((item, idx) => (
+                  <motion.li
+                    key={idx}
+                    initial={{ opacity: 0, x: -18 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.45, delay: 1.2 + idx * 0.08 }}
+                    viewport={{ once: true }}
+                    className="flex items-center text-gray-700 font-nunito-sans"
+                  >
+                    <span className="w-1.5 h-1.5 bg-black rounded-full mr-2 flex-shrink-0" />
+                    <span className="text-xs font-nunito-sans"
+                    style={{
+                      fontSize: '15px',
+                      fontWeight: 500,
+                      lineHeight: '24px',
+                      letterSpacing: '0px'
+                    }}>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.p 
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.8 }}
+                viewport={{ once: true }}
+                className="text-gray-700 text-lg leading-relaxed font-nunito-sans"
                 style={{
                   fontSize: '16px',
                   fontWeight: 500,
@@ -146,20 +190,18 @@ export default function OurCupsSection() {
                   letterSpacing: '0px'
                 }}
               >
-                Crafted with high-quality materials and designed for durability, our bottles
-                seamlessly blend function with style. Every sip becomes a subtle brand reminder,
-                ensuring your message travels wherever your audience goes.
-              </p>
+                At Fien, we believe the strongest connections are built one sip at a time.
+              </motion.p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.95 }}
+              transition={{ duration: 0.8, delay: 2.2 }}
               viewport={{ once: true }}
               className="flex items-center justify-center"
             >
-              <button className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"
+              <a href='/contact-us' className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-nunito-sans"
               onMouseEnter={() => setIsButtonHovered(true)}
               onMouseLeave={() => setIsButtonHovered(false)}>
                 <span>Get in touch with us</span>
@@ -179,7 +221,7 @@ export default function OurCupsSection() {
                 }`}
               />
             </div>
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

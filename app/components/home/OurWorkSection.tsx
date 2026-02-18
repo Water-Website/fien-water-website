@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
 import { 
   IconArrowRight, 
   IconArrowUpRight, 
@@ -15,9 +16,38 @@ const OurWorkSection = () => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const isPausedRef = useRef(false);
-  const lastManualChangeRef = useRef(Date.now());
+  const lastManualChangeRef = useRef<number>(0);
 
-  const workItems = [ { id: 1, category: "Brand Category 1", title: "Brewing Brands with Every Sip", description: "We've collaborated with leading café chains like Cafe Coffee Day, Chai Point, and Blue Tokai to create branded tea and coffee cups that engage customers in their daily routines.", additionalText: "Every sip becomes a brand reminder, turning casual moments into powerful impressions that stay with people long after their coffee break.", image: "/work/our-work-one.png" }, { id: 2, category: "Brand Category 2", title: "Branding Beyond the Boardroom", description: "Professional spaces are where ideas, deals, and innovation thrive. By partnering with co-working leaders like WeWork, Innov8, and Awfis, we ensure brands are integrated into these environments through creatively designed products.", additionalText: "This approach keeps businesses visible, relatable, and part of everyday work-life interactions.", image: "/work/our-work-two.png" }, { id: 3, category: "Brand Category 3", title: "Refreshing Brands, One Bottle at a Time", description: "Retail and wellness brands like Himalaya, Dabur, and Patanjali trust our herbal water bottles and daily-use essentials for consistent brand recall.", additionalText: "Each product serves as a subtle yet effective marketing tool, ensuring visibility while aligning with the healthy, refreshing lifestyles these brands promote.", image: "/work/our-work-three.png" }, { id: 4, category: "Brand Category 4", title: "Making Brands Shine at Every Event", description: "High-impact events call for high-visibility branding. Collaborating with platforms like NASSCOM, TiE Delhi-NCR, and Startup India, we’ve designed creative product marketing strategies that ensure brands stand out.", additionalText: "From seminars to product launches, we help make every moment a brand-building opportunity.", image: "/work/our-work-four.png" } ];
+  useEffect(() => {
+    lastManualChangeRef.current = Date.now();
+  }, []);
+
+  const workItems = [ 
+    { 
+      id: 1, 
+      category: "Brand Category 1", 
+      title: "MEZUCI ITALIA", 
+      description: "Mezucci Italia, known for its finely crafted stainless-steel bathroom accessories and luxury finish hardware, partnered with us to extend their elegant identity into branded hydration.", 
+      additionalText: "We designed and executed premium custom bottles that carried the same refined aesthetics and quality Mezucci is celebrated for, ensuring a seamless brand extension.", 
+      image: "/home-tab/work/mezuci.png" 
+    }, 
+    { 
+      id: 2, 
+      category: "Brand Category 2", 
+      title: "THERMOPLASTICS TECHNOLOGIES", 
+      description: "Thermoplastic Technologies, a company recognised for its high-precision injection-moulded components and robust plastic engineering capabilities, collaborated with us to translate their technical excellence into a branded bottle.", 
+      additionalText: "We delivered a crisp, industrial-inspired design with flawless execution—reflecting their commitment to accuracy, performance and dependable manufacturing quality.", 
+      image: "/home-tab/work/thermo.png" 
+    }, 
+    { 
+      id: 3, 
+      category: "Brand Category 3", 
+      title: "THE CAKE VANITY", 
+      description: "The Cake Vanity, known for its beautifully crafted cakes and indulgent desserts, partnered with us to extend their playful, pastel-themed identity into branded hydration.",
+      additionalText: "We designed and executed bottles that capture their sweet, welcoming aesthetic—bringing their signature charm and bakery warmth into a neatly refined, professional brand expression.", 
+      image: "/home-tab/work/cake.png" 
+    }, 
+  ];
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -37,7 +67,7 @@ const OurWorkSection = () => {
   const currentItem = workItems[currentIndex];
 
   // Motion Variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -45,7 +75,7 @@ const OurWorkSection = () => {
     }
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
@@ -73,12 +103,12 @@ const OurWorkSection = () => {
               className="text-gray-900 mb-4 font-bold font-nunito-sans"
               style={{ fontSize: '46px', fontWeight: 900, lineHeight: '100%' }}
             >
-              Brands We've Worked With..
+             Across Industries. Across sectors.
             </h2>
             <p className="text-gray-600 max-w-5xl mx-auto font-nunito-sans"
               style={{ fontSize: '16px', fontWeight: 300, lineHeight: '140%' }}
             >
-              From corporate offices to retail spaces, we've helped top brands create impactful visibility through creative product marketing.
+              From established corporate names to fast-growing retail stores, we’ve partnered with brands across scales and sectors.
             </p>
           </motion.div>
 
@@ -138,7 +168,7 @@ const OurWorkSection = () => {
                 {/* Content */}
                 <div className="w-[55%] pl-12">
                   {/* Category Badge */}
-                  <motion.div 
+                  {/* <motion.div 
                     key={`${currentItem.id}-category`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -152,7 +182,7 @@ const OurWorkSection = () => {
                         </span>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
 
                   {/* Title */}
                   <motion.h3 
@@ -184,7 +214,7 @@ const OurWorkSection = () => {
                   </motion.div>
 
                   {/* Know More Button */}
-                  <motion.button 
+                  <a href='/fien-water' 
                     key={`${currentItem.id}-button`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -210,7 +240,7 @@ const OurWorkSection = () => {
                         }`} 
                       />
                     </div>
-                  </motion.button>
+                  </a>
                 </div>
               </div>
             </div>

@@ -223,7 +223,7 @@ const QuerySection = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <Image
-                src="/get-in-touch/get-in-touch-one.png"
+                src="/home-tab/get-in-touch/get-in-touch-top.png"
                 alt="Premium water bottle design"
                 fill
                 className="object-contain drop-shadow-2xl"
@@ -240,7 +240,7 @@ const QuerySection = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               <Image
-                src="/get-in-touch/get-in-touch-two.png"
+                src="/home-tab/get-in-touch/get-in-touch-bottom.png"
                 alt="Elegant bottle branding"
                 fill
                 className="object-contain drop-shadow-2xl"

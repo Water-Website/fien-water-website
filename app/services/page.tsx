@@ -1,4 +1,3 @@
-import Header from '../components/services/Header';
 import ServicesTabSection from '../components/services/ServicesTabSection';
 import ServicesFeaturesSection from '../components/home/ServicesFeaturesSection';
 import ServicesProcessSection from '../components/home/ServicesProcessSection';
@@ -15,11 +14,6 @@ export default function ServicesPage() {
   return (
     <>
       <div className="scroll-snap-container">
-        {/* Header */}
-        <section className="relative">
-          <Header />
-        </section>
-        
         {/* Services Tab Section with Background */}
         <section className="scroll-snap-section relative" data-section="services-tab">
           <ServicesTabSection />
@@ -27,42 +21,36 @@ export default function ServicesPage() {
 
         <section className="scroll-snap-section relative">
           <OurBottlesSection />
-          <BackToTopButton position="bottom-right" />
         </section>
 
         <section className="scroll-snap-section relative">
           <OurCupsSection />
-          <BackToTopButton position="bottom-right" />
         </section>
 
         <section className="scroll-snap-section relative">
           <OurFienWaterSection />
-          <BackToTopButton position="bottom-right" />
         </section>
 
         <section className="scroll-snap-section relative">
           <ContactSection />
-          <BackToTopButton position="bottom-right" />
         </section>
         
         {/* Services Features Section */}
         <section className="scroll-snap-section relative">
           <FaqSection />
-          <BackToTopButton position="bottom-right" />
         </section>
         
         {/* Services Process Section */}
         <section className="scroll-snap-section relative">
           <GetInTouchSection />
-          <BackToTopButton position="bottom-right" />
         </section>
         
         {/* Footer Section */}
         <section className="scroll-snap-section relative">
           <FooterSection />
-          <BackToTopButton position="bottom-right" />
         </section>
       </div>
+      <BackToTopButton position="bottom-right" />
     </>
   );
 }

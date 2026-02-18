@@ -1,88 +1,49 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function FienWaterHeroSection() {
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
-
-  const images = [
-    {
-      id: 1,
-      default: '/fien-water-images/hero-section/main-first.png',
-      hover: '/fien-water-images/hero-section/main-first-on-hover.png',
-      alt: 'Fien Water First Image'
-    },
-    {
-      id: 2,
-      default: '/fien-water-images/hero-section/main-second.png',
-      hover: '/fien-water-images/hero-section/main-second-on-hover.png',
-      alt: 'Fien Water Second Image'
-    },
-    {
-      id: 3,
-      default: '/fien-water-images/hero-section/main-third.png',
-      hover: '/fien-water-images/hero-section/main-third-on-hover.png',
-      alt: 'Fien Water Third Image'
-    }
-  ];
-
   return (
     <section className="relative h-screen w-full bg-black overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-10">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/fien-water-images/hero-section/fien-water-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0" />
+      </div>
+
       {/* Large FIEN Text Overlay */}
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-        <Image
+        {/* <Image
           src="/fien-water-images/hero-section/fien-logo-zoomed.png"
           alt="Fien Water Hero Text"
           width={900}
           height={500}
           priority
-        />
-      </div>
-
-      {/* Three Images - Full Width Split */}
-      <div className="relative z-10 flex h-full w-full">
-        {images.map((image, index) => (
-          <motion.div
-            key={image.id}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              delay: index * 0.2,
-              ease: "easeOut"
-            }}
-            className="relative flex-1 h-full cursor-pointer group"
-            onMouseEnter={() => setHoveredImage(image.id)}
-            onMouseLeave={() => setHoveredImage(null)}
-          >
-            {/* Default Image */}
-            <Image
-              src={image.default}
-              alt={image.alt}
-              fill
-              className={`object-cover transition-opacity duration-500 ${
-                hoveredImage === image.id ? 'opacity-0' : 'opacity-100'
-              }`}
-              priority
-            />
-            
-            {/* Hover Image */}
-            <Image
-              src={image.hover}
-              alt={`${image.alt} - Hover`}
-              fill
-              className={`object-cover transition-opacity duration-500 ${
-                hoveredImage === image.id ? 'opacity-100' : 'opacity-0'
-              }`}
-              priority
-            />
-
-            {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/20" />
-          </motion.div>
-        ))}
+        /> */}
+        <motion.h1 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="text-white/20 text-6xl md:text-8xl font-extrabold tracking-tighter backdrop-blur-sm px-4 py-2 rounded-xl inline-block text-center select-none"
+          style={{
+            WebkitTextStroke: '1px rgba(255, 255, 255, 0.5)',
+            fontFamily: 'Tom',
+            // textShadow: '0 4px 30px rgba(0, 0, 0, 0.2)'
+          }}
+        >
+          Introducing Fien Water
+        </motion.h1>
       </div>
 
       {/* Bottom Text - "Slide Down For Information" */}

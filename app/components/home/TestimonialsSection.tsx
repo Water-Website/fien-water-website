@@ -14,24 +14,24 @@ const TestimonialsSection = () => {
   const testimonials = useMemo(() => [
     { 
       id: 1, 
-      name: "Emily Thompson", 
-      position: "Product Manager, AlphaWorks", 
-      testimonial: "Partnering with this team has been one of the best business decisions we've made. Their AI solutions have streamlined our workflows, reduced operational costs, and helped us achieve results faster. The ease of integration and ongoing support has been exceptional.", 
-      image: "/testimonials/testimonials-avatar-one.png" 
+      name: "MEZUCI ITALIA", 
+      position: "Rahul Lalwani", 
+      testimonial: "Fien translated our aesthetic into beautifully crafted branded bottles and made sure they reached the right touchpoints—client meetings, studio displays and partner interactions. The bottles genuinely elevated our presence. We noticed clients remembering our brand more easily, and several even asked for the bottles themselves. It created the subtle, premium visibility we were aiming for.", 
+      image: null 
     }, 
     { 
       id: 2, 
-      name: "David Lee", 
-      position: "COO, BrightEdge Enterprises", 
-      testimonial: "We've never experienced this level of efficiency before. The AI agents have completely transformed how we work, saving countless hours each week. Not only are we able to focus on higher-value tasks, but the overall productivity and morale of our team have improved significantly. It's been a game-changer for us.", 
-      image: "/testimonials/testimonials-avatar-two.png" 
+      name: "THERMOPLASTICS TECHNOLOGIES", 
+      position: "Ashish Jain", 
+      testimonial: "For us, effectiveness mattered more than appearance, and Fien delivered both. The bottles were circulated across our dealer network, factory visits and supplier interactions, creating a surprising wave of recall. We saw more enquiries and faster recognition during discussions simply because people had already seen the bottles. It turned out to be a very efficient branding tool.", 
+      image: "/home-tab/testimonials/testimonial-2.png" 
     }, 
     { 
       id: 3, 
-      name: "James Williams", 
-      position: "CEO, BrightEdge Enterprises", 
-      testimonial: "I was skeptical at first, but the results speak for themselves. Our processes are now faster, more accurate, and far less labor-intensive. What impressed me most was how intuitive and user-friendly the platform is, ensuring our team quickly adapted without any disruption. Highly recommended.", 
-      image: "/testimonials/testimonials-avatar-three.png" 
+      name: "THE CAKE VANITY", 
+      position: "Mehak Khurana", 
+      testimonial: "Fien helped us turn our themed bottles into a small but powerful marketing win. We distributed them with select orders and at events, and customers instantly picked them up on social media. It brought in new walk-ins, repeat buyers and a noticeable bump in our online engagement. The response was far beyond what we expected for a bakery.", 
+      image: "/home-tab/testimonials/testimonial-1.png" 
     }
   ], []);
 
@@ -45,18 +45,15 @@ const TestimonialsSection = () => {
 
   // Auto-scroll effect - simplified approach
   useEffect(() => {
-    console.log('Starting auto-scroll...');
     
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => {
         const next = (prev + 1) % 3; // Use fixed length of 3
-        console.log('Auto-scroll: moving from', prev, 'to', next);
         return next;
       });
     }, 1500); // 1.5 seconds
 
     return () => {
-      console.log('Cleaning up auto-scroll...');
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
@@ -114,8 +111,7 @@ const TestimonialsSection = () => {
           </div>
           <h2 className="text-gray-900 mb-3 font-bold font-nunito-sans"
             style={{ fontSize: '48px', fontWeight: 900, lineHeight: '110%', letterSpacing: '-1px' }}>
-            What Customers Say About
-            <br /> Our Company
+            Proof, Not Promises
           </h2>
         </motion.div>
 
@@ -126,8 +122,8 @@ const TestimonialsSection = () => {
           variants={fadeUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          From corporate offices to retail spaces, we've helped top brands create impactful visibility
-          through creative product marketing.
+         Real feedback from clients who’ve trusted us to bring their vision to life.
+
         </motion.p>
 
         {/* Carousel Section */}
@@ -160,8 +156,14 @@ const TestimonialsSection = () => {
               >
                 <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-[500px] flex flex-col">
                   <div className="flex flex-col items-center mb-3">
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-gray-100">
-                      <Image src={testimonial.image} alt={testimonial.name} width={80} height={80} />
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-100 flex items-center justify-center bg-[#DFE5E7]">
+                      {testimonial.image ? (
+                        <Image src={testimonial.image} alt={testimonial.name} width={80} height={80} className="w-full h-full object-cover" />
+                      ) : (
+                        <svg viewBox="0 0 24 24" className="w-12 h-12 text-white fill-current">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                      )}
                     </div>
                   </div>
                   <div className="flex-1 flex flex-col justify-center">
@@ -170,8 +172,8 @@ const TestimonialsSection = () => {
                       {testimonial.testimonial}
                     </p>
                     <div className="text-center">
-                      <h4 className="text-gray-900 font-bold font-nunito-sans"
-                        style={{ fontSize: '18px', fontWeight: 700 }}>{testimonial.name}</h4>
+                      <h4 className="text-gray-600 font-semibold font-nunito-sans"
+                        style={{ fontSize: '16px', fontWeight: 700 }}>{testimonial.name}</h4>
                       <p className="text-gray-500 font-nunito-sans"
                         style={{ fontSize: '14px', fontWeight: 400 }}>{testimonial.position}</p>
                     </div>
@@ -188,7 +190,7 @@ const TestimonialsSection = () => {
           variants={fadeUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <button
+          <a href="/contact-us"
             className="inline-flex items-center px-4 py-3 border-2 border-gray-900 text-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 font-medium"
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
@@ -206,7 +208,7 @@ const TestimonialsSection = () => {
                 }`}
               />
             </div>
-          </button>
+          </a>
         </motion.div>
       </motion.div>
     </section>

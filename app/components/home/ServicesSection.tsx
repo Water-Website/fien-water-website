@@ -9,8 +9,8 @@ interface Service {
   id: number;
   name: string;
   title: string;
-  description: string;
-  additionalText: string;
+  description: string | React.ReactNode;
+  additionalText: string | React.ReactNode;
   image: string;
 }
 
@@ -28,27 +28,59 @@ const ServicesSection: React.FC = () => {
   const services = [
     {
       id: 1,
-      name: 'Service 1',
-      title: 'Service 1',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-      additionalText: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      image: '/services/service-one.png'
+      name: 'Fien Bottles',
+      title: 'FIEN BOTTLES',
+      description: (
+        <>
+          At FIEN, we reimagine water as more than hydration; it’s a canvas for brand storytelling. <strong>“Fien bottles” blends brand</strong> narrative with utility by being sleek, portable, and designed to flow seamlessly into modern lifestyles. We turn a daily essential into a lasting impression.
+          <br />
+          From events and workplaces to retail and on-the-go, FIEN ensures your brand travels wherever life does. We cater to every detail, clarity, design, and finish by reflecting our commitment to sophistication and impact.
+        </>
+      ),
+      additionalText: (
+        <>
+          <strong>FIEN Water isn't just to satisfy your thirst; it's your brand carried, remembered, experienced, and felt.</strong>
+        </>
+      ),
+      image: '/services/service-1.png'
     },
     {
       id: 2,
-      name: 'Service 2',
-      title: 'Service 2',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-      additionalText: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      image: '/services/service-two.png'
+      name: 'Fien Cups',
+      title: 'FIEN CUPS',
+      description: (
+        <>
+        At FIEN, cups can do more than serve a drink; they can carry stories, moments, and identity.
+        <br />
+        We create branded paper cups that are 100% biodegradable, designed not just to hold beverages, but to build experiences and spark connections. Whether it’s roadside chai, a café cappuccino, an office coffee break, or cocktails at a celebration, every FIEN cup becomes a natural reflection of the brand behind it. 
+        </>
+      ),
+      additionalText: (
+        <>
+          Our vision is simple: wherever there’s a cup, it should help the brand speak. From Delhi’s busy tea stalls to modern workplaces, from everyday pauses to milestone events, branding deserves to be present in the moments people share most.
+        </>
+      ),
+      image: '/services/service-2.png'
     },
     {
       id: 3,
-      name: 'Service 3',
-      title: 'Service 3',
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-      additionalText: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      image: '/services/service-three.png'
+      name: 'Fien Water',
+      title: 'FIEN WATER',
+      description: (
+        <>
+        At FIEN, water is more than just about eradicating thirst; it’s a moment to restore, energize, and uplift.
+        <br />
+        Our herbal-infused bottles combine purity with natural vitality, offering a refreshing choice for modern, health-conscious lifestyles. Each sip is crafted to nourish both body and mind, turning hydration into a mindful experience.
+        <br />
+        Designed as a premium companion for every part of your day, FIEN Water blends elegance with wellness.
+        </>
+      ),
+      additionalText: (
+        <>
+          Make it a ritual, a habit, and an everyday practice because it is built with uncompromising quality and the finest natural elements; it transforms ordinary moments into experiences that leave a lasting impression on your body and your mind.
+        </>
+      ),
+      image: '/services/service-3.png'
     }
   ];
 
@@ -214,9 +246,7 @@ const ServicesSection: React.FC = () => {
                 lineHeight: '100%',
                 letterSpacing: '0px' }}
             >
-              End-to-End Services That Bring Your
-              <br />
-              Brand to Life
+              What do WE OFFER?
             </h1>
             <p 
               className="text-gray-600 max-w-4xl mx-auto text-center leading-relaxed font-nunito-sans"
@@ -225,7 +255,7 @@ const ServicesSection: React.FC = () => {
                 fontWeight: 300,
                 lineHeight: '100%', }}
             >
-              Our creative process covers strategy, design, and production – delivering high-quality branded essentials that connect with people where it matters most
+              We cater to ideas and shape them into realities, leaving a powerful impact behind.
             </p>
           </div>
         </div>
@@ -361,11 +391,11 @@ const ServicesSection: React.FC = () => {
                             </h3>
                             
                             <div className="space-y-4">
-                              <p className="text-white/90 leading-relaxed text-sm">
+                              <p className="text-white/90 leading-relaxed text-sm [&_strong]:text-white [&_strong]:font-bold">
                                 {service.description}
                               </p>
-                              
-                              <p className="text-white/80 leading-relaxed text-sm">
+                              {/* <br /> */}
+                              <p className="text-white/80 leading-relaxed text-sm [&_strong]:text-white [&_strong]:font-bold">
                                 {service.additionalText}
                               </p>
                             </div>
@@ -373,7 +403,7 @@ const ServicesSection: React.FC = () => {
 
                           <div className={`${activeService === service.id ? 'animate-textSlideOver' : ''}`} 
                                style={{ animationDelay: '0.2s' }}>
-                            <button 
+                            <a href="/services" 
                               className="services-button self-start"
                               onMouseEnter={() => setIsButtonHovered(true)}
                               onMouseLeave={() => setIsButtonHovered(false)}
@@ -395,7 +425,7 @@ const ServicesSection: React.FC = () => {
                                   }`} 
                                 />
                               </div>
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>

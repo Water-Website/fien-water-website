@@ -161,18 +161,21 @@ export default function HydrationSection() {
                   letterSpacing: '0px',
                  }}
               >
-                Every drop of FIEN Water begins its journey in the untouched upper reaches of the Himalayas, where snow and rain filter naturally through layers of rock and soil, gathering minerals and purity along the way. Infused with subtle herbal notes and bottled with care, FIEN Water carries the essence of nature's wellness. More than hydration, it is a mindful choice — crafted for those who value purity, sustainability, and the timeless luxury of living in harmony with nature.
+                Born in the untouched ranges of the Himalayas, Fien Water begins its journey in one of the purest natural environments on earth. Naturally distilled through layers of mineral-rich rock, every drop is filtered by nature long before it reaches us, exceptionally pure. But purity is just the beginning.
+                <br />
+What sets Fien apart is its infusion of ancient herbal wisdom into modern hydration.  It is crafted for people who choose wellness with intention, who understand that the water they drink should contribute to clarity, focus, and balance.
+<br />
+In a world full of ordinary water, Fien redefines what hydration can be. You don’t drink Fien just to hydrate. You drink it to feel purified.
+
               </motion.p>
 
                           {/* Feature List */}
             <ul>
               {[
-                'Innovative & Future-Ready Solutions',
-                'Human-Centric Design Philosophy',
-                'Seamless Integration of Aesthetics & Usability',
-                'Focus on Scalability & Growth',
-                'Commitment to Continuous Innovation',
-                'Designs that Inspire & Perform'
+                'Sourced from Himalayan origin, naturally pure at its source',
+                'Infused herbal ingredients for holistic wellness and vitality',
+                'Environment-friendly packaging crafted with responsibility and purpose',
+                'Created for mindful consumers who see hydration as a lifestyle, not just to satisfy thirst'
               ].map((item, index) => (
                 <motion.li 
                   key={index} 
@@ -226,16 +229,7 @@ export default function HydrationSection() {
                 backgroundClip: 'text'
               }}
             >
-              {showAlternateText ? (
-                <>
-                  It Took Nature Years to Perfect.{' '}
-                  <span className="block mt-2">
-                    FIEN Brings It to You in Every Sip.
-                  </span>
-                </>
-              ) : (
-                "FIEN Water: Hydration, Redefined for Body, Mind & Planet"
-              )}
+                "FIEN Water: Hydration Redefined for Body, Mind and Experience."
             </motion.h2>
           </AnimatePresence>
         </div>

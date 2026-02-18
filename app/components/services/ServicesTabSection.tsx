@@ -13,13 +13,13 @@ export default function ServicesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/services-tab/hero-section/header-bg.png" // replace with your actual background image
+            src="/services-tab/hero-section/services-hero.png" // replace with your actual background image
             alt="Hero Background"
             fill
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0" /> {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
         </div>
 
         {/* Header */}
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </header>
 
         {/* Bottom Left Vector */}
-        <div className="absolute bottom-0 left-0 z-10">
+        {/* <div className="absolute bottom-0 left-0 z-10">
           <Image
             src="/services-tab/hero-section/hero-section-vector.png"
             alt="Hero Section Vector"
@@ -36,7 +36,7 @@ export default function ServicesPage() {
             height={600}
             className=""
           />
-        </div>
+        </div> */}
 
         {/* Hero Content */}
         <div className="relative flex flex-col justify-center items-start max-w-6xl px-32 h-[90vh]">
@@ -49,10 +49,10 @@ export default function ServicesPage() {
             className="text-white font-extrabold tracking-tight font-poppins justify-start items-start mb-2"
             style={{ fontSize: '60px', lineHeight: '120%', letterSpacing: '2px', fontWeight: 900 }}
           >
-          <span className="block mb-5">Comprehensive Design</span>
-          <span className="block mb-5">Development Solutions for</span>
-          <span className="block mb-5">Impactful Digital</span>
-          <span className="block">Experiences</span>
+          <span className="block mb-5">We turn ideas</span>
+          <span className="block mb-5">into Experiences</span>
+          <span className="block mb-5">People</span>
+          <span className="block">Remember</span>
           </motion.h1>
 
           {/* & Symbol positioned to connect the first two lines */}
@@ -85,11 +85,9 @@ export default function ServicesPage() {
           className="mt-6 text-gray-200 font-nunito-sans max-w-3xl"
           style={{ fontSize: '18px', lineHeight: '28px' }}
         >
-          At FIEN, we believe that everyday items have the power to create extraordinary brand
-          connections. Our custom-branded water bottles are more than just containers — they are
-          a reflection of your brand’s identity, carried into people’s daily routines. Whether at
-          the gym, in the office, or on the go, our bottles keep your brand visible, memorable,
-          and trusted.
+          At FIEN, we believe the Simplest things can make the strongest and lasting impressions. 
+Turning everyday essentials and ordinary items into experiences that connect and narrate a story is the trajectory Fien follows.
+
         </motion.p>
         </div>
       </div>
