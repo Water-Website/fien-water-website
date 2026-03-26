@@ -1,6 +1,4 @@
 import ServicesTabSection from '../components/services/ServicesTabSection';
-import ServicesFeaturesSection from '../components/home/ServicesFeaturesSection';
-import ServicesProcessSection from '../components/home/ServicesProcessSection';
 import FooterSection from '../components/home/FooterSection';
 import OurBottlesSection from '../components/services/OurBottlesSection';
 import GetInTouchSection from '../components/home/GetInTouchSection';
