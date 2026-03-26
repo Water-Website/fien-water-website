@@ -62,7 +62,7 @@ const Header = () => {
         {/* Social Icons */}
         <div className="flex items-center space-x-4">
           <a
-            href="#"
+            href="https://www.instagram.com/fien.it?igsh=MTk0NG8wM3kweDB0OA=="
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black hover:bg-white/20 transition-colors duration-200"
             aria-label="Instagram"
           >
@@ -71,7 +71,7 @@ const Header = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/share/1DLHZYbgJt/"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black hover:bg-white/20 transition-colors duration-200"
             aria-label="Facebook"
           >
@@ -80,7 +80,7 @@ const Header = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://x.com/fienitt?t=kLhYqqx7Nf14f7ZPAey8-g&s=09"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black hover:bg-white/20 transition-colors duration-200"
             aria-label="X (Twitter)"
           >
@@ -89,7 +89,7 @@ const Header = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://wa.me/919560402187"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black hover:bg-white/20 transition-colors duration-200"
             aria-label="WhatsApp"
           >
